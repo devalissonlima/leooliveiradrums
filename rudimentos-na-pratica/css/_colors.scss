@@ -1,0 +1,28 @@
+// Branding
+$purple-light: #8239E0;
+$purple: #6B28C2;
+$purple-dark: #5416A4;
+$green-light: #2DCA2D;
+$green-dark: #229922;
+
+// Gray Scale
+
+$gray-1: #090312;
+$gray-2: #160F20;
+$gray-3: #332A41;
+$gray-4: #9180A6;
+$gray-5: #C7B9D9;
+$white: #F3EBFD;
+
+// Gradients
+
+$gradient-purple: linear-gradient(90deg, $purple-light 0%, $purple-dark 100%);
+$gradient-purple-reverse: linear-gradient(90deg, $purple-dark 0%, $purple-light 100%);
+$gradient-green: linear-gradient(90deg, $green-dark 0%, $green-light 100%);
+$gradient-black: radial-gradient(66.43% 66.43% at 76.5% 83.5%, #1D0F30 0%, #07020E 100%);
+
+
+// Shadows
+
+$button-shadow: 0px 24px 40px rgba(43, 195, 43, 0.07), 0px 16.98748px 28.14375px 0px rgba(43, 195, 43, 0.1), 0px 31.92707px 52.63979px 0px rgba(43, 195, 43, 0.13), 0px 75px 126px 0px rgba(43, 195, 43, 0.18);
+
