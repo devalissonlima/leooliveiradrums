@@ -622,11 +622,130 @@ span {
       justify-content: center;
       align-items: center;
       width: 100%;
+      margin-bottom: 48px;
       img {
         width: 100%;
         max-width: 510px;
         pointer-events: none;
         user-select: none;
+      }
+    }
+
+    .accordion-modulos-container {
+      position: relative;
+      border: 2px solid #e8e8e8;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto 48px;
+
+      .modulo-item {
+        position: relative;
+        padding: 0;
+        border-bottom: 2px solid #e8e8e8;
+        overflow-y: hidden;
+        cursor: pointer;
+
+        button {
+          display: block;
+          position: absolute;
+          right: 32px;
+          top: 24px;
+          background: none;
+          border: none;
+          padding: 8px;
+          cursor: pointer;
+          z-index: 10;
+
+          svg {
+            transition: 0.5s;
+          }
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        h4 {
+          font-weight: 600;
+          margin: 0;
+          padding: 24px 32px;
+          padding-right: 60px;
+          transition: 0.5s;
+          text-align: left;
+          background-color: #f3f3f3;
+          color: #000000;
+        }
+
+        .modulo-content {
+          transition: 0.5s;
+          padding: 24px 32px;
+          padding-top: 0;
+          margin: 0;
+          background-color: #ffffff;
+          color: #000000;
+          overflow: hidden;
+
+          .modulo-description {
+            display: block;
+            margin-bottom: 20px;
+            color: #000000;
+          }
+
+          .aulas-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .aula-item {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .aula-icon {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+                svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .aula-name {
+                text-align: left;
+                margin: 0;
+                color: #000000;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .modulo-item.open {
+        .modulo-content {
+          opacity: 1;
+        }
+      }
+
+      .modulo-item.close {
+        h4 {
+          margin: 0;
+        }
+        .modulo-content {
+          opacity: 0;
+        }
+
+        button svg {
+          transform: rotateZ(-45deg);
+        }
       }
     }
   }
