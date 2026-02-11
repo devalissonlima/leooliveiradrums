@@ -84,7 +84,7 @@ p {
   line-height: 160%;
   font-weight: 400;
   line-height: 150%;
-  color: $gray-5;
+  color: white;
   font-display: swap;
 }
 
@@ -118,7 +118,7 @@ span {
   height: 100%;
   overflow: hidden;
 
-  background-image: url(../img/bgheadline.png);
+  background-image: url(../img/bgheadline.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -131,7 +131,7 @@ span {
   height: 100%;
   overflow: hidden;
 
-  background-image: url(../img/back3.png);
+  background-image: url(../img/back3.webp);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
@@ -261,6 +261,14 @@ span {
     a {
       text-decoration: none;
       color: white;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: rgb(167, 154, 132);
+      }
     }
   }
 
@@ -610,7 +618,7 @@ span {
 }
 
 .modulos-accordion-section {
-  margin-top: 120px;
+  margin-top: 200px;
   margin-bottom: 0;
   .container {
     justify-content: center;
@@ -622,6 +630,7 @@ span {
       justify-content: center;
       align-items: center;
       width: 100%;
+      margin-bottom: -48px;
       img {
         width: 100%;
         max-width: 510px;
@@ -629,11 +638,130 @@ span {
         user-select: none;
       }
     }
+
+    .accordion-modulos-container {
+      position: relative;
+      border: 2px solid #e8e8e8;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto 48px;
+
+      .modulo-item {
+        position: relative;
+        padding: 0;
+        border-bottom: 2px solid #e8e8e8;
+        overflow-y: hidden;
+        cursor: pointer;
+
+        button {
+          display: block;
+          position: absolute;
+          right: 32px;
+          top: 24px;
+          background: none;
+          border: none;
+          padding: 8px;
+          cursor: pointer;
+          z-index: 10;
+
+          svg {
+            transition: 0.5s;
+          }
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        h4 {
+          font-weight: 600;
+          margin: 0;
+          padding: 24px 32px;
+          padding-right: 60px;
+          transition: 0.5s;
+          text-align: left;
+          background-color: #f3f3f3;
+          color: #000000;
+        }
+
+        .modulo-content {
+          transition: 0.5s;
+          padding: 24px 32px;
+          padding-top: 0;
+          margin: 0;
+          background-color: #ffffff;
+          color: #000000;
+          overflow: hidden;
+
+          .modulo-description {
+            display: block;
+            margin: 16px 0;
+            color: #000000;
+            text-align: left;
+          }
+
+          .aulas-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .aula-item {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .aula-icon {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+                svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .aula-name {
+                text-align: left;
+                margin: 0;
+                color: #000000;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .modulo-item.open {
+        .modulo-content {
+          opacity: 1;
+        }
+      }
+
+      .modulo-item.close {
+        h4 {
+          margin: 0;
+        }
+        .modulo-content {
+          opacity: 0;
+        }
+
+        button svg {
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
   }
 }
 
 .omc {
-  background-image: url(../img/back1-omc.png);
+  background-image: url(../img/back1-omc.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -865,11 +993,23 @@ span {
             border-radius: 16px;
             width: 100%;
             .logo-instituicao {
-              width: 64px;
-              height: 64px;
+              width: 100%;
+              max-width: 100px;
               aspect-ratio: 1/1;
               background: #303030;
               border-radius: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 100%;
+              }
+
+              i {
+                font-size: 32px;
+                color: #d99400;
+              }
             }
             .text-content {
               display: flex;
@@ -877,6 +1017,12 @@ span {
               text-align: left;
               align-items: flex-start;
               justify-content: center;
+
+              h4 {
+                font-family: Monument, "Montserrat", sans-serif;
+                line-height: 100%;
+                margin-bottom: 8px;
+              }
             }
           }
         }

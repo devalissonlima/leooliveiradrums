@@ -76,7 +76,7 @@ p {
   line-height: 160%;
   font-weight: 400;
   line-height: 150%;
-  color: #c7b9d9;
+  color: white;
   font-display: swap;
 }
 
@@ -109,7 +109,7 @@ span {
   min-width: 100vw;
   height: 100%;
   overflow: hidden;
-  background-image: url(../img/bgheadline.png);
+  background-image: url(../img/bgheadline.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -121,7 +121,7 @@ span {
   min-width: 100vw;
   height: 100%;
   overflow: hidden;
-  background-image: url(../img/back3.png);
+  background-image: url(../img/back3.webp);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
@@ -229,6 +229,13 @@ span {
 .header nav a {
   text-decoration: none;
   color: white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.header nav a:hover {
+  color: rgb(167, 154, 132);
 }
 .header a.CTA-button {
   padding: 10px 24px;
@@ -466,7 +473,7 @@ span {
 }
 
 .modulos-accordion-section {
-  margin-top: 120px;
+  margin-top: 200px;
   margin-bottom: 0;
 }
 .modulos-accordion-section .container {
@@ -479,6 +486,7 @@ span {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: -48px;
 }
 .modulos-accordion-section .container .title-image img {
   width: 100%;
@@ -488,9 +496,107 @@ span {
      -moz-user-select: none;
           user-select: none;
 }
+.modulos-accordion-section .container .accordion-modulos-container {
+  position: relative;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto 48px;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item {
+  position: relative;
+  padding: 0;
+  border-bottom: 2px solid #e8e8e8;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item button {
+  display: block;
+  position: absolute;
+  right: 32px;
+  top: 24px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item button svg {
+  transition: 0.5s;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item:last-child {
+  border-bottom: none;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item h4 {
+  font-weight: 600;
+  margin: 0;
+  padding: 24px 32px;
+  padding-right: 60px;
+  transition: 0.5s;
+  text-align: left;
+  background-color: #f3f3f3;
+  color: #000000;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content {
+  transition: 0.5s;
+  padding: 24px 32px;
+  padding-top: 0;
+  margin: 0;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .modulo-description {
+  display: block;
+  margin: 16px 0;
+  color: #000000;
+  text-align: left;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list .aula-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list .aula-item:last-child {
+  margin-bottom: 0;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list .aula-item .aula-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list .aula-item .aula-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item .modulo-content .aulas-list .aula-item .aula-name {
+  text-align: left;
+  margin: 0;
+  color: #000000;
+  font-size: 16px;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item.open .modulo-content {
+  opacity: 1;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item.close h4 {
+  margin: 0;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item.close .modulo-content {
+  opacity: 0;
+}
+.modulos-accordion-section .container .accordion-modulos-container .modulo-item.close button svg {
+  transform: rotateZ(-45deg);
+}
 
 .omc {
-  background-image: url(../img/back1-omc.png);
+  background-image: url(../img/back1-omc.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -707,11 +813,21 @@ span {
   width: 100%;
 }
 .aboutme .container .about-text .grid-aboutme-instituicao .col div .logo-instituicao {
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  max-width: 100px;
   aspect-ratio: 1/1;
   background: #303030;
   border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutme .container .about-text .grid-aboutme-instituicao .col div .logo-instituicao img {
+  width: 100%;
+}
+.aboutme .container .about-text .grid-aboutme-instituicao .col div .logo-instituicao i {
+  font-size: 32px;
+  color: #d99400;
 }
 .aboutme .container .about-text .grid-aboutme-instituicao .col div .text-content {
   display: flex;
@@ -719,6 +835,11 @@ span {
   text-align: left;
   align-items: flex-start;
   justify-content: center;
+}
+.aboutme .container .about-text .grid-aboutme-instituicao .col div .text-content h4 {
+  font-family: Monument, "Montserrat", sans-serif;
+  line-height: 100%;
+  margin-bottom: 8px;
 }
 
 .combo-faixa {
