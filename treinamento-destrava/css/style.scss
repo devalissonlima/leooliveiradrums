@@ -288,6 +288,12 @@ span {
 
   .course-logo {
     margin-bottom: -100px;
+    width: 100%;
+    max-width: 100vw;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 
   .headline-text {
@@ -876,6 +882,7 @@ span {
       border-radius: 16px;
       img {
         height: 100%;
+        max-width: 100%;
         object-fit: cover;
       }
     }
@@ -1100,13 +1107,9 @@ span {
       max-width: 392px;
       position: relative;
 
-      svg {
+      img {
         width: 100%;
-
-        #words {
-          transform-origin: center;
-          animation: rotateWords 16s linear infinite;
-        }
+        object-fit: contain;
       }
     }
 
